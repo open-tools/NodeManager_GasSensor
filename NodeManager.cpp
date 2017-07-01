@@ -4,6 +4,10 @@
 
 #include "NodeManager.h"
 
+void printFM() {
+  Serial.print (F("Free memory = "));
+  Serial.println (freeMemory ());
+}
 /***************************************
    PowerManager
 */
@@ -3293,6 +3297,7 @@ void NodeManager::presentation() {
 
 // setup NodeManager
 void NodeManager::setup() {
+  Serial.print(F("NodeManager::setup: ")); printFM();
   // retrieve and store isMetric from the controller
   if (_get_controller_config) _is_metric = getControllerConfig().isMetric;
   #if DEBUG == 1
@@ -3307,9 +3312,11 @@ void NodeManager::setup() {
   // run setup for all the registered sensors
   for (int i = 1; i <= MAX_SENSORS; i++) {
     if (_sensors[i] == 0) continue;
+    Serial.print(F("NodeManager::setup: Before sensor "));Serial.print(i);printFM();
     // call each sensor's setup()
     _sensors[i]->setup();
   }
+  Serial.print(F("NodeManager::setup: END"));printFM();
 }
 
 // run the main function for all the register sensors
