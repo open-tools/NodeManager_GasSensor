@@ -1,4 +1,4 @@
-
+#if false
 /*
 NodeManager is intended to take care on your behalf of all those common tasks a MySensors node has to accomplish, speeding up the development cycle of your projects.
 NodeManager includes the following main components:
@@ -72,3 +72,5 @@ void receiveTime(unsigned long ts) {
   // call NodeManager receiveTime routine
   nodeManager.receiveTime(ts);
 }
+
+#endif
