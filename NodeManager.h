@@ -12,6 +12,8 @@
 
 void printFM();
 
+void printFM();
+
 /***********************************
    Constants
 */
