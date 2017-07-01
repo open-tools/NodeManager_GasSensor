@@ -5,7 +5,7 @@
  * Sketch configuration
  */
 
-#define SKETCH_NAME "NodeManager"
+#define SKETCH_NAME "MH-Z19"
 #define SKETCH_VERSION "1.0"
 
 /**********************************
@@ -113,26 +113,26 @@
 #define DEBUG 1
 
 // if enabled, enable the capability to power on sensors with the arduino's pins to save battery while sleeping
-#define POWER_MANAGER 1
+#define POWER_MANAGER 0
 // if enabled, will load the battery manager library to allow the battery level to be reported automatically or on demand
-#define BATTERY_MANAGER 1
+#define BATTERY_MANAGER 0
 // if enabled, allow modifying the configuration remotely by interacting with the configuration child id
 #define REMOTE_CONFIGURATION 1
 // if enabled, persist the remote configuration settings on EEPROM
 #define PERSIST 0
 // if enabled, a battery sensor will be created at BATTERY_CHILD_ID (201 by default) and will report vcc voltage together with the battery level percentage
-#define BATTERY_SENSOR 1
+#define BATTERY_SENSOR 0
 // if enabled, a signal sensor will be created at RSSI_CHILD_ID (202 by default) and will report the signal quality of the transport layer
-#define SIGNAL_SENSOR 0
+#define SIGNAL_SENSOR 1
 // if enabled, send a SLEEPING and AWAKE service messages just before entering and just after leaving a sleep cycle and STARTED when starting/rebooting
 #define SERVICE_MESSAGES 0
 
 // Enable this module to use one of the following sensors: SENSOR_ANALOG_INPUT, SENSOR_LDR, SENSOR_THERMISTOR, SENSOR_ML8511, SENSOR_ACS712, SENSOR_RAIN, SENSOR_SOIL_MOISTURE
-#define MODULE_ANALOG_INPUT 1
+#define MODULE_ANALOG_INPUT 0
 // Enable this module to use one of the following sensors: SENSOR_DIGITAL_INPUT
-#define MODULE_DIGITAL_INPUT 1
+#define MODULE_DIGITAL_INPUT 0
 // Enable this module to use one of the following sensors: SENSOR_DIGITAL_OUTPUT, SENSOR_RELAY, SENSOR_LATCHING_RELAY
-#define MODULE_DIGITAL_OUTPUT 1
+#define MODULE_DIGITAL_OUTPUT 0
 // Enable this module to use one of the following sensors: SENSOR_DHT11, SENSOR_DHT22
 #define MODULE_DHT 0
 // Enable this module to use one of the following sensors: SENSOR_SHT21, SENSOR_HTU21D
@@ -156,9 +156,9 @@
 // Enable this module to use one of the following sensors: SENSOR_MCP9808
 #define MODULE_MCP9808 0
 // Enable this module to use one of the following sensors: SENSOR_MQ
-#define MODULE_MQ 0
+#define MODULE_MQ 1
 // Enable this module to use one of the following sensors: SENSOR_MHZ19
-#define MODULE_MHZ19 0
+#define MODULE_MHZ19 1
 // Enable this module to use one of the following sensors: SENSOR_AM2320    
 #define MODULE_AM2320 0
 // Enable this module to use one of the following sensors: SENSOR_TSL2561    
