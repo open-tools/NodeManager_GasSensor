@@ -2426,6 +2426,9 @@ void SensorMHZ19::setRxTx(int rxpin, int txpin) {
 // what to do during before
 void SensorMHZ19::onBefore() {
 }
+// what to do when receiving an interrupt
+void SensorMHZ19::onInterrupt() {
+}
 
 // what to do during setup
 void SensorMHZ19::onSetup() {

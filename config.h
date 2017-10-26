@@ -5,7 +5,7 @@
  * Sketch configuration
  */
 
-#define SKETCH_NAME "MH-Z19"
+#define SKETCH_NAME "AirQuality"
 #define SKETCH_VERSION "1.0"
 
 /**********************************

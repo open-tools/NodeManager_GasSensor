@@ -35,22 +35,60 @@ void before() {
   /*
    * Register below your sensors
   */
-  nodeManager.setSleep(SLEEP, 2, MINUTES); 
+  nodeManager.setSleepMinutes(2); 
+  nodeManager.setReportIntervalMinutes(2);  
+//  nodeManager.setSleepSeconds(10); 
+//  nodeManager.setReportIntervalSeconds(10);  
+
+  SensorMQ* mqSensor = 0;
   Serial.print(F("BEFORE registerSensor0: ")); printFM();
-  nodeManager.registerSensor(SENSOR_MQ, A0, 0);
+  int mq2 = nodeManager.registerSensor(SENSOR_MQ, A0, 1);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq2));
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
   Serial.print(F("BEFORE registerSensor1: ")); printFM();
-  nodeManager.registerSensor(SENSOR_MQ, A1, 1);
+  int mq3 = nodeManager.registerSensor(SENSOR_MQ, A1, 2);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq3));
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
   Serial.print(F("BEFORE registerSensor2: ")); printFM();
-  nodeManager.registerSensor(SENSOR_MQ, A2, 2);
+  int mq4 = nodeManager.registerSensor(SENSOR_MQ, A2, 3);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq4));      
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
   Serial.print(F("BEFORE registerSensor3: ")); printFM();
-  nodeManager.registerSensor(SENSOR_MQ, A3, 3);
-  Serial.print(F("BEFORE reg.Sens. MHZ19: ")); printFM();
+  int mq5 = nodeManager.registerSensor(SENSOR_MQ, A3, 4);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq5));
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
   
-  int co2 = nodeManager.registerSensor(SENSOR_MHZ19, 6, 4);
+/*  Serial.print(F("BEFORE registerSensor0: ")); printFM();
+  int mq6 = nodeManager.registerSensor(SENSOR_MQ, A4, 5);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq6));
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
+  Serial.print(F("BEFORE registerSensor1: ")); printFM();
+  int mq7 = nodeManager.registerSensor(SENSOR_MQ, A5, 6);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq7));
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
+  Serial.print(F("BEFORE registerSensor2: ")); printFM();
+  int mq8 = nodeManager.registerSensor(SENSOR_MQ, A6, 7);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq8));
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
+  Serial.print(F("BEFORE registerSensor3: ")); printFM();
+  int mq9 = nodeManager.registerSensor(SENSOR_MQ, A7, 8);
+  mqSensor = ((SensorMQ*)nodeManager.getSensor(mq9));
+  mqSensor->setCalibrationSampleTimes(10); 
+  mqSensor->setCalibrationSampleInterval(250);
+*/  
+  Serial.print(F("BEFORE reg.Sens. MHZ19: ")); printFM();
+  int co2 = nodeManager.registerSensor(SENSOR_MHZ19, 6, 5);
   SensorMHZ19* co2Sensor = ((SensorMHZ19*)nodeManager.getSensor(co2));
   co2Sensor->setRxTx(6, 7);
-  Serial.print(F("AFTER reg. sensors:     "));printFM();
   
+  Serial.print(F("AFTER registering Sensors: ")); printFM();
   /*
    * Register above your sensors
   */
