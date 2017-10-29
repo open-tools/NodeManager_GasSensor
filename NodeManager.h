@@ -5,9 +5,12 @@
 #define NodeManager_h
 
 #include <Arduino.h>
+#include "MemoryFree.h"
 
 // define NodeManager version
 #define VERSION "1.7-dev"
+
+void printFM();
 
 /***********************************
    Constants
