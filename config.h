@@ -6,16 +6,16 @@
  */
 
 #define SKETCH_NAME "AirQuality"
-#define SKETCH_VERSION "1.0"
+#define SKETCH_VERSION "1.1"
 
 /**********************************
  * MySensors node configuration
  */
 
 // General settings
-#define MY_BAUD_RATE 9600
+//#define MY_BAUD_RATE 9600
 //#define MY_DEBUG
-//#define MY_NODE_ID 100
+#define MY_NODE_ID 50
 //#define MY_SMART_SLEEP_WAIT_DURATION_MS 500
 
 // NRF24 radio settings
@@ -63,7 +63,7 @@
  * MySensors gateway configuration
  */
 // Common gateway settings
-//#define MY_REPEATER_FEATURE
+#define MY_REPEATER_FEATURE
 
 // Serial gateway settings
 //#define MY_GATEWAY_SERIAL
