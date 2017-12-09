@@ -5,7 +5,7 @@
  * Sketch configuration
  */
 
-#define SKETCH_NAME "AirQuality"
+#define SKETCH_NAME "AirQuality PCB"
 #define SKETCH_VERSION "1.1"
 
 /**********************************

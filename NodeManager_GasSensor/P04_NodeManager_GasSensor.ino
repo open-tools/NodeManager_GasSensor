@@ -101,7 +101,7 @@ void before() {
   Serial.print(F("BEFORE reg.Sens. MHZ19: ")); printFM();
   int co2 = nodeManager.registerSensor(SENSOR_MHZ19, 6, 9);
   SensorMHZ19* co2Sensor = ((SensorMHZ19*)nodeManager.getSensor(co2));
-  co2Sensor->setRxTx(6, 7);
+  co2Sensor->setRxTx(7,8);
   co2Sensor->setDescription("MH-Z19 CO2 Sensor");
 
   Serial.print(F("AFTER registering Sensors: ")); printFM();
@@ -142,7 +142,7 @@ void receiveTime(unsigned long ts) {
 }
 
 
-template<int s> struct Wow;
+//template<int s> struct Wow;
 //Wow<sizeof(Sensor)> unused_warning;
 //Wow<sizeof(SensorMQ)> unused_warning;
 //Wow<sizeof(NodeManager)> unused_warning;
